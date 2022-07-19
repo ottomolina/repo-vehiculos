@@ -1,0 +1,59 @@
+<app-title-bar [title]="'Vehículos'" (handleAgregar)="abrirDialog()"></app-title-bar>
+<ng-container>
+  <table mat-table [dataSource]="lstData" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef style="width: 15%"> No. </th>
+      <td mat-cell *matCellDef="let element; let i = index;" style="width: 15%"> {{(i+1)}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef> Marca </th>
+      <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="linea">
+      <th mat-header-cell *matHeaderCellDef> Línea </th>
+      <td mat-cell *matCellDef="let element"> {{element.linea}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef> Modelo </th>
+      <td mat-cell *matCellDef="let element"> {{element.modelo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef> Color </th>
+      <td mat-cell *matCellDef="let element"> {{getColor(element.color)}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_creado">
+      <th mat-header-cell *matHeaderCellDef [matTooltip]="'Fecha de creación del vehículo'"> Fecha creación </th>
+      <td mat-cell *matCellDef="let element"> {{app.formatoFecha(element.fecha_creado)}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="options">
+      <th mat-header-cell *matHeaderCellDef style="width: 15%"> Opciones </th>
+      <td mat-cell *matCellDef="let obj" style="width: 15%">
+        <button mat-icon-button [matMenuTriggerFor]="menu" [matMenuTriggerData]="{object: obj}">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</ng-container>
+
+<mat-menu #menu="matMenu">
+  <ng-template matMenuContent let-object="object">
+    <button mat-menu-item (click)="abrirDialog(object)">
+      <mat-icon>edit</mat-icon>
+      <span>Modificar Registro</span>
+    </button>
+   <button mat-menu-item (click)="clickEliminar(object)">
+     <mat-icon>remove_circle_outline</mat-icon>
+     <span>Eliminar Registro</span>
+   </button>
+  </ng-template>
+</mat-menu>

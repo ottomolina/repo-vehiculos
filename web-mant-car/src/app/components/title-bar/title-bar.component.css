@@ -1,0 +1,11 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background-color: #dedede;
+}
+
+.mat-icon-button {
+  margin-left: 5px;
+}

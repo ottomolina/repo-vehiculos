@@ -1,0 +1,10 @@
+<mat-form-field class="full-width">
+  <mat-label>{{label}}</mat-label>
+  <mat-select [(ngModel)]="input"
+              (valueChange)="onChange($event)"
+              (blur)="onTouch()">
+    <mat-option *ngFor="let element of lista" [value]="element.valor">
+      {{element.texto}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

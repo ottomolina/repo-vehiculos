@@ -1,0 +1,19 @@
+<div class="dialog">
+    <h1 mat-dialog-title>
+      {{title}}
+    </h1>
+    <div mat-dialog-content>
+  
+      <form [formGroup]="formUsuario">
+          <app-custom-input [label]="'Nombres:*'" [formControlName]="'nombres'"></app-custom-input>
+          <app-custom-input [label]="'Apellidos:*'" [formControlName]="'apellidos'"></app-custom-input>
+          <app-custom-input [label]="'Correo:*'" [formControlName]="'correo'" *ngIf="!datos"></app-custom-input>
+      </form>
+  
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button (click)="clickGuardar()" [disabled]="!formUsuario.valid">Guardar</button>
+      <button mat-raised-button (click)="closeDialog()">Cancelar</button>
+    </div>
+  </div>
+  

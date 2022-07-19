@@ -1,0 +1,29 @@
+<mat-form-field class="full-width">
+  <mat-label>{{label}}</mat-label>
+
+  <ng-container *ngIf="rows === 0 else containerTextarea">
+    <input matInput
+           [(ngModel)]="input"
+           [type]="type"
+           [maxlength]="maxLength"
+           (ngModelChange)="onChange($event)"
+           (blur)="onTouch()"
+           [readonly]="readonly">
+    <button mat-icon-button matSuffix
+            (click)="input = ''"
+            *ngIf="clearable && input.length > 0">
+      <mat-icon>close</mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-template #containerTextarea>
+    <textarea matInput
+              [(ngModel)]="input"
+              [type]="'text'"
+              [maxLength]="maxLength"
+              (ngModelChange)="onChange($event)"
+              (blur)="onTouch()">
+    </textarea>
+  </ng-template>
+
+</mat-form-field>

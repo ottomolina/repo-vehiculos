@@ -1,0 +1,46 @@
+/api/build
+/api/node_modules
+/api/.env
+
+/web-mant-car/node_modules
+# Compiled output
+/web-mant-car/dist
+/web-mant-car/tmp
+/web-mant-car/out-tsc
+/web-mant-car/bazel-out
+
+# Node
+/web-mant-car/node_modules
+/web-mant-car/npm-debug.log
+/web-mant-car/yarn-error.log
+
+# IDEs and editors
+/web-mant-car/.idea/
+/web-mant-car/.project
+/web-mant-car/.classpath
+/web-mant-car/.c9/
+/web-mant-car/*.launch
+/web-mant-car/.settings/
+/web-mant-car/*.sublime-workspace
+
+# Visual Studio Code
+/web-mant-car/.vscode/*
+/web-mant-car/.vscode
+/web-mant-car/!.vscode/settings.json
+/web-mant-car/!.vscode/tasks.json
+/web-mant-car/!.vscode/launch.json
+/web-mant-car/!.vscode/extensions.json
+/web-mant-car/.history/*
+
+# Miscellaneous
+/web-mant-car/.angular/cache
+/web-mant-car/.sass-cache/
+/web-mant-car/connect.lock
+/web-mant-car/coverage
+/web-mant-car/libpeerconnection.log
+/web-mant-car/testem.log
+/web-mant-car/typings
+
+# System files
+/web-mant-car/.DS_Store
+/web-mant-car/Thumbs.db
